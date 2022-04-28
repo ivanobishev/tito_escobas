@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mensaje enviado</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'estilos/mensaje_enviado.css' %}">
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="cabecera">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{% static 'img/broomstick_icon.png' %}">
+                        </td>
+                        <td>
+                            <h1>Escobas Cabello</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="navegador">
+                <div class="opcion">
+                    <a href="{% url 'index' %}">
+                        Galeria 
+                    </a>
+                </div>
+                <div class="opcion">
+                    <a href="{% url 'contacto' %}">
+                        <u>
+                            Contacto
+                        </u>
+                    </a>
+                </div>
+                <div class="opcion">
+                    <a href="{% url 'panel' %}">
+                        Panel de empleados
+                    </a>
+                </div>
+            </div>
+            <div id="cuadro">
+                Mensaje enviado con exito.
+            </div>
+        </div>
+    </body>
+</html>

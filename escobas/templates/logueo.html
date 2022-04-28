@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Iniciando sesión</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'estilos/logueo.css' %}">
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="cabecera">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{% static 'img/broomstick_icon.png' %}">
+                        </td>
+                        <td>
+                            <h1>Escobas Cabello</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="navegador">
+                <div class="opcion">
+                    <a href="{% url 'index' %}">
+                        Galería 
+                    </a>
+                </div>
+                <div class="opcion">
+                    <a href="{% url 'contacto' %}">
+                        Contacto
+                    </a>
+                </div>
+                <div class="opcion" id="actual">
+                    <a href="{% url 'panel' %}">
+                        Panel de empleados
+                    </a>
+                </div>
+            </div>
+            <div id="cuadro_logueo">
+                <form action="{% url 'logueo' %}" method="POST">
+                    {% csrf_token %}
+                    <p>
+                        Usuario:
+                        <input type="text" name="usuario">
+                    </p>
+                    <p>
+                        Clave:
+                        <input type="password" name="clave">
+                    </p>
+                    <p>
+                        <input type="submit" value="Validar">
+                    </p>
+                </form>
+            </div>
+
+            {% if equivocado %}
+                <div id="cuadro_error">
+                    Usuario o clave erroneos.
+                </div>
+            {% endif %}
+        </div>
+    </body>
+</html>

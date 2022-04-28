@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Galería</title>
+        {% load static %}
+        <link rel="icon" type="image/x-icon" href="{% static 'img/broomstick_icon.png' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'estilos/index.css' %}">
+        <script src="{% static 'codigos/index.js' %}"></script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="cabecera">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{% static 'img/broomstick_icon.png' %}">
+                        </td>
+                        <td>
+                            <h1>Escobas Cabello</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="navegador">
+                <div class="opcion" id="actual">
+                    <a href="{% url 'index' %}">
+                        Galería
+                    </a>
+                </div><div class="opcion">
+                    <a href="{% url 'contacto' %}">
+                        Contacto
+                    </a>
+                </div>
+                <div class="opcion">
+                    <a href="{% url 'panel' %}">
+                        Panel de empleados
+                    </a>
+                </div>
+            </div>
+            <div id="izquierda">
+                <img src="{% static 'img/eco_icon.png' %}">
+                <p>
+                    Fabricamos escobas de forma artesanal
+                    y ecológica.
+                </p>
+            </div>
+            <div id="centro">
+                <div id="contenedor-carrusel">
+                    <div id="diapositiva">
+                        <img src="https://i.imgur.com/myQhkxV.jpeg">
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                    </div>
+                </div>
+            </div>
+            <hr id="separador"/>
+            <div id="derecha">
+                <img src="{% static 'img/barriendo2.png' %}">
+                <br/>
+                Los servicios de limpieza del ayuntamiento de
+                Ronda utilizan nuestras escobas, y transmiten
+                valoraciones satisfactorias acerca de estas.
+            </div>
+            <div id="pie">
+                &nbsp;
+            </div>
+        </div>
+    </body>
+</html>

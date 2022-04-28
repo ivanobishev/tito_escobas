@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Galería</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'estilos/panel.css' %}">
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="cabecera">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{% static 'img/broomstick_icon.png' %}">
+                        </td>
+                        <td>
+                            <h1>Escobas Cabello</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="navegador">
+                <div class="opcion">
+                    <a href="{% url 'index' %}">
+                        Galería
+                    </a>
+                </div>
+                <div class="opcion">
+                    <a href="{% url 'contacto' %}">
+                        Contacto
+                    </a>
+                </div>
+                <div class="opcion" id="actual">
+                    <a href="{% url 'panel' %}">
+                        Panel de empleados
+                    </a>
+                </div>
+            </div>
+            <div id="contenedor_salir">
+                <div id="salir">
+                    <a href="{% url 'cerrar_sesion' %}">
+                        Cerrar sesión
+                    </a>
+                </div>
+            </div>
+            <div id="centro">
+                {% if mensajes %}
+                    <h2>Consultas de clientes</h2>
+                    <table id="listado" cellspacing="0">
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Telefono
+                            </th>
+                            <th>
+                                Explicacion
+                            </th>
+                            <th>
+                                Fecha
+                            </th>
+                            <th>
+                                Borrar
+                            </th>
+                        </tr>
+                        {% for mensaje in mensajes %}
+                        <tr>
+                            <td>
+                                {{ mensaje.nombre }}
+                            </td>
+                            <td>
+                                {{ mensaje.telefono }}
+                            </td>
+                            <td class="explicacion">
+                                {{ mensaje.explicacion }}
+                            </td>
+                            <td>
+                                {{ mensaje.fecha|date:"d-m-Y" }}
+                            </td>
+                            <td>
+                                <a href="{% url 'borrando_mensaje' mensaje.pk %}">
+                                    <img src="{% static 'img/trash_icon.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>
+                        Sin consultas de clientes.
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

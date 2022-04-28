@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f2f2f2;
+    font-family: tahoma;
+}
+
+#contenedor{
+    width: 100%;
+}
+
+#cabecera{
+    text-align: center;
+}
+
+#cabecera table{
+    margin: auto;
+}
+
+#cabecera img{
+    height: 3em;
+}
+
+h1{
+    font-size: 1.3em;
+}
+
+#navegador {
+    background-color: #333333;
+}
+
+.opcion {
+    display: inline-block;
+}
+
+.opcion a {
+    display: block;
+    padding: 0.35em;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.opcion a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#actual {
+    background-color: #595959;
+}
+
+#centro {
+    margin: auto;
+    width: 100%
+}
+
+#listado {
+    margin: auto;
+    border-top: 0.1em solid grey;
+    border-left: 0.1em solid grey;
+    margin-top: 1em;
+}
+
+#listado tr th {
+    padding: 0.4em;
+    border-right: 0.1em solid grey;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: normal;
+}
+
+#listado tr td {
+    border-right: 0.1em solid grey;
+    border-bottom: 0.1em solid grey;
+    text-align: center;
+    padding: 0.1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+.explicacion {
+    max-width: 5em;
+}
+
+#listado tr td a img {
+    max-width: 2em;
+}
+
+@media only screen and (min-width: 600px) {
+    #centro {
+        width: 70%
+    }
+    .opcion a {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .explicacion {
+        max-width: 10em;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #centro {
+        width: 60%
+    }
+    .explicacion {
+        max-width: 25em;
+    }
+}
+
+#contenedor_salir {
+    text-align: right;
+}
+
+#salir {
+    border: 1px solid black;
+    margin-top: 1em;
+    border-radius: 5%;
+    display: inline-block;
+    text-align: center;
+}
+
+#salir a {
+    display: inline-block;
+    padding: 0.45em;
+    text-decoration: none;
+    color: black;
+}
+
+h2 {
+    font-size: 1.15em;
+}

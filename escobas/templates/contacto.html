@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Contacto</title>
+        {% load static %}
+        <link rel="icon" type="image/x-icon" href="{% static 'img/broomstick_icon.png' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'estilos/contacto.css' %}">
+        <script src="{% static 'codigos/contacto.js' %}"></script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="cabecera">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{% static 'img/broomstick_icon.png' %}">
+                        </td>
+                        <td>
+                            <h1>Escobas Cabello</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="navegador">
+                <div class="opcion">
+                    <a href="{% url 'index' %}">
+                        Galería
+                    </a>
+                </div>
+                <div class="opcion" id="actual">
+                    <a href="{% url 'contacto' %}">
+                        Contacto
+                    </a>
+                </div>
+                <div class="opcion">
+                    <a href="{% url 'panel' %}">
+                        Panel de empleados
+                    </a>
+                </div>
+            </div>
+            <div id="izquierda">
+                <p>
+                    ¿Quieres dejarnos un mensaje?
+                </p>
+                <img 
+                    src="{% static 'img/mensaje.png' %}"
+                    id="boton_mensaje"
+                >
+            </div>
+            <div id="centro">
+                Listado de precios:
+                <ul>
+                    <li>Escoba pequeña - 2 euros</li>
+                    <li>Escoba grande - 3 euros</li>
+                </ul>
+                <hr/>
+                <p>
+                    Aunque no vivas en la comarca de Antequera
+                    o zonas aledañas, podemos llevar los
+                    productos a domicilio.
+                </p>
+                También se acepta recogida en nuestra tienda.
+                <p>
+                    Para la compra de una escoba, puede llamarnos
+                    al teléfono que aparece en pantalla;
+                    o bien dejarnos un mensaje pulsando el círculo
+                    azul que tiene un sobre, indicando su dirección
+                    u otra información que nos pueda ser relevante
+                    para facilitar el reparto.
+                </p>
+            </div>
+            <div id="derecha">
+                <img src="{% static 'img/mapa.png' %}" id="mapa">
+                <p>
+                    Nos ubicamos en la pedanía de La Joya,
+                    comarca de Antequera, provincia de Málaga.
+                </p>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{% static 'img/phone_icon.png' %}" id="telefono">
+                        </td>
+                        <td>
+                            &nbsp;
+                            952 111 111
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="pie">
+                &nbsp;
+            </div>
+            <div id="modal">
+                <div id="modal_contenido">
+                    <div id="modal_cabecera">
+                        <span id="modal_cerrar">
+                            &times;
+                        </span>
+                        <h2>
+                            REDACTANDO MENSAJE
+                        </h2>
+                    </div>
+                    <div id="modal_cuerpo">
+                        {% csrf_token %}
+                        <form action="{% url 'creando_mensaje' %}" method="POST">
+                            <p>
+                                Nombre:
+                                <input type="text" name="nombre">
+                                <br/>
+                                <span class="fallo"></span>
+                            </p>
+                            <p>
+                                Teléfono:
+                                <input type="number" name="telefono">
+                                <br/>
+                                <span class="fallo"></span>
+                            </p>
+                            <br/>
+                            Expón aquí tu consulta o pedido:
+                            <br/><br/>
+                            <textarea name="explicacion"></textarea>
+                            <br/>
+                            <span class="fallo"></span>
+                            <p>
+                                <input type="button" id="enviar" value="Enviar">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
