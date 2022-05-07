@@ -7,7 +7,7 @@
         <link rel="icon" type="image/x-icon" href="{% static 'img/broomstick_icon.png' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'estilos/index.css' %}">
-        <script src="{% static 'codigos/index.js' %}"></script>
+        <!-- JavaScript se carga al final del Body -->
     </head>
     <body>
         <div id="contenedor">
@@ -47,25 +47,34 @@
                 </p>
             </div>
             <div id="centro">
-                <div id="contenedor-carrusel">
-                    <div id="diapositiva">
-                        <img src="https://i.imgur.com/myQhkxV.jpeg">
-                        <a class="prev">&#10094;</a>
-                        <a class="next">&#10095;</a>
+                <div class="contenedor-diapositiva">
+                    <div class="diapositiva fade">
+                        <img src="https://i.imgur.com/myQhkxV.jpeg" style="width:100%">
                     </div>
+                    <div class="diapositiva fade">
+                        <img src="https://i.imgur.com/IK9aAXo.jpg" style="width:100%">
+                    </div>
+                </div>
+                <br/>
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
             </div>
             <hr id="separador"/>
             <div id="derecha">
                 <img src="{% static 'img/barriendo2.png' %}">
                 <br/>
-                Los servicios de limpieza del ayuntamiento de
-                Ronda utilizan nuestras escobas, y transmiten
-                valoraciones satisfactorias acerca de estas.
+                Los servicios de limpieza de varios ayuntamientos
+                hacen uso de nuestras escobas, y nos transmiten
+                valoraciones satisfactorias acerca de estas por sus
+                buenos resultados en sus labores de limpieza.
             </div>
             <div id="pie">
                 &nbsp;
             </div>
         </div>
+        <script src="{% static 'codigos/index.js' %}"></script>
     </body>
 </html>
