@@ -67,6 +67,7 @@ h1{
 #centro{
     display: block;
     width: 100%;
+    padding: 0.5em;
     text-align: center;
 }
 #derecha{
@@ -85,7 +86,7 @@ h1{
     #centro{
         display: inline-block;
         width: 80%;
-        padding: 0.5em;
+        padding: 1.5em;
     }
     #derecha{
         display: block;
@@ -110,7 +111,7 @@ h1{
     #centro{
         float: left;
         width: 50%;
-        padding: 0.5em;
+        padding: 2em;
     }
     #derecha{
         float: left;
